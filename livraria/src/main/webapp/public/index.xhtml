@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"  >
+<body>
+	<h:form id="form">
+		<h:panelGrid>
+			<h:commandButton id="novoLivro" action="#{cadastro.novoLivro()}"
+				value="Novo Livro" />
+		</h:panelGrid>
+		<h:panelGrid>
+			<p:dataTable var="livro" value="#{cadastro.listaLivros}">
+				<p:column headerText="Id">
+					<h:outputText value="#{livro.id}" />
+				</p:column>
+	
+				<p:column headerText="Título">
+					<h:outputText value="#{livro.titulo}" />
+				</p:column>
+				<p:column headerText="Autor">
+					<h:outputText value="#{livro.autor}" />
+				</p:column>
+				<p:column headerText="Ações">
+					<h:commandButton id="editarLivro" action="#{cadastro.editarLivro(livro)}"
+						value="Editar" >						
+					</h:commandButton>
+					<h:commandButton id="deletarLivro" action="#{cadastro.deleteLivro(livro)}" value="Deletar" 
+						onclick="return confirm('Confirma a exclusão?')"/>
+				</p:column>
+			</p:dataTable>
+		</h:panelGrid>
+
+	</h:form>
+</body>
+</html>

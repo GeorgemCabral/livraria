@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="listarTodosLivros::#pages#listarTodosLivros.xhtml" NAME="output"
+    PATH="/pages/listarTodosLivros.xhtml"
+    TARGET="rules:#pages#listarTodosLivros.xhtml"
+    TITLE="listarTodosLivros" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::1" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::1" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="criarLivro::#pages#criarLivros.xhtml"
+    NAME="output" PATH="/pages/criarLivros.xhtml"
+    TARGET="rules:#pages#criarLivros.xhtml" TITLE="criarLivro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#listarTodosLivros.xhtml"
+  PATH="/pages/listarTodosLivros.xhtml" SHAPE="256,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules::2" SHAPE="32,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::2" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterarLivro::#pages#alterarLivros.xhtml"
+    NAME="output" PATH="/pages/alterarLivros.xhtml"
+    TARGET="rules:#pages#alterarLivros.xhtml" TITLE="alterarLivro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#alterarLivros.xhtml"
+  PATH="/pages/alterarLivros.xhtml" SHAPE="240,257,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#criarLivros.xhtml"
+  PATH="/pages/criarLivros.xhtml" SHAPE="240,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules::3" SHAPE="32,353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::3" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="deletarLivro::#pages#deletarLivros.xhtml"
+    NAME="output" PATH="/pages/deletarLivros.xhtml"
+    TARGET="rules:#pages#deletarLivros.xhtml" TITLE="deletarLivro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#deletarLivros.xhtml"
+  PATH="/pages/deletarLivros.xhtml" SHAPE="240,369,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

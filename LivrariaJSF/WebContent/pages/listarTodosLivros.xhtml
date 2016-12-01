@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+    <h:form>
+       
+        <h:messages />
+        <h:dataTable value="#{livroMB.allLivros}" var="livro" styleClass="table" headerClass="tableColumnsHeader" rowClasses="tableFirstLine,tableNextLine" >
+            <h:column>
+                <f:facet name="header">
+                    #{msgs.livroTitulo}
+                </f:facet>
+ 
+                #{livro.titulo}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    #{msgs.autor}
+                </f:facet>
+ 
+                #{livro.autor}
+            </h:column>
+            <h:column>
+                <h:panelGrid columns="2">
+                    <!-- Always save the id as hidden when you use a request scope MB -->
+                    <h:inputHidden value="#{livro.id}" />
+ 
+                    <h:commandButton action="#{livroMB.updateLivroStart()}" value="#{msgs.update}"  >
+                        <f:setPropertyActionListener target="#{livroMB.livro}" value="#{livro}" />
+                    </h:commandButton>
+                    <h:commandButton action="#{livroMB.deleteLivroStart()}" value="#{msgs.delete}"  >
+                        <f:setPropertyActionListener target="#{livroMB.livro}" value="#{livro}" />
+                    </h:commandButton>
+                </h:panelGrid>
+            </h:column>
+        </h:dataTable>
+        <!-- This button is displayed to the user, just to you see the error msg  -->
+        <h:commandButton action="criarLivro" value="#{msgs.create} #{msgs.livro}" />
+    </h:form>
+</h:body>
+</html>
